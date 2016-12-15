@@ -1,17 +1,2 @@
 # Maps
-Descripción del código para hacer los mapas de precios zonales. 
-library(ggplot2)
-library(mapdata)
-library(maptools)
-library(maps)
-library(foreing)
-frame<-read.dbf("estatal.dbf")
-mexico<-readShapePoly("estatal.shp")
-plot (mexico)
-ggplot()+geom_polygon(data=mexico,aes(x=long,y=lat,group=group))+coord_fixed(1.3)
-read.csv("coord.csv",header=T)
-coord1<-read.csv("coord.csv",header=T)
-labs1<-data.frame(coord1,stringsAsFactors = FALSE)
-ggplot()+geom_polygon(data=mexico,aes(x=long,y=lat,group=group))+geom_point(data=labs1,aes(x=Long,y=Lat),color="yellow",size=5)+coord_fixed(1.3)
-mapa1<-ggplot(data=mexico)+geom_polygon (data=mexico,aes(x=long,y=lat,group=group), fill="white", color="black")+geom_point(data=labpri, mapping= aes(x=Long,y=Lat,color=Precio ), size=4) +scale_colour_manual(values = c("#BEFFFE","#1FF9C2","#00EE00", "#FFFF00", "#F9BF1F", "#F80B27 ")) + theme_light() + labs(title = "PML Promedio por Zona de Carga - Agosto 2016") + coord_fixed(1.3)
-mapaANUAL1 + geom_text(data = laban, aes(x=Long, y=Lat, label = paste("  ", as.character(ZONA.DE.CARGA) , sep="")), angle = 5, hjust = 0, color = "Black", check_overlap = T, size = 2)
+Descripción del código para hacer los mapas de precios zonales.
