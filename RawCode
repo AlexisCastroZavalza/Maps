@@ -16,3 +16,12 @@ mapa1<-ggplot(data=mexico)+geom_polygon (data=mexico,aes(x=long,y=lat,group=grou
 mapa2 <- mapa1 + geom_point(data=labs1, mapping= aes(x=Long,y=Lat,shape=Signo, fill="red"), size=3, show.legend = FALSE) + scale_shape_manual(values=c(0,15,17))
 mapa2 + geom_text(data = labs1, aes(x=Long, y=Lat, label = paste("  ", as.character(Magn) , sep="")), angle = 5, hjust = 0, color = "Black", check_overlap = T, size = 3.5) + annotate("text", x = -112.5, y = 20, label = "Cuadros negros = Congestión negativa
 Triángulos Negros = Congestión Positiva") 
+#Para correrlo en Jupyter
+png(filename="Std_PNG.png", 
+    units="in", 
+    width=15, 
+    height=9, 
+    pointsize=4, 
+    res=72)
+plot(mapa3)
+dev.off()
